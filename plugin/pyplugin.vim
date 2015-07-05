@@ -22,7 +22,7 @@ exts_path = os.path.join(root, "exts" )
 pyvim.load_plugin( exts_path )
 
 #init im
-#from im import IM
+from im import IM
 EOF
 "-------------------------------------------------------------------------------
 
@@ -31,6 +31,7 @@ EOF
 "    return ''
 "endfunction
 "
+auto CursorMovedI * py IM("CursorMovedI", 'event')
 "auto CursorHold  *  py IM("CursorHold", 'event')
 "auto CursorHoldI *  py IM("CursorHoldI", 'event')
 
