@@ -14,25 +14,25 @@ import vim
 
 # add paths
 root = os.path.dirname(vim.eval('s:script_folder_path'))
-pylib_path    = os.path.join(root, 'wind/vimlib' )
+pylib_path    = os.path.join(root, 'wind/' )
 sys.path.insert( 0, pylib_path )
 
 import pyvim
-exts_path = os.path.join(root, "wind/exts" )
+exts_path = os.path.join(root, "exts" )
 pyvim.load_plugin( exts_path )
 
 #init im
-from im import IM
+#from im import IM
 EOF
 "-------------------------------------------------------------------------------
 
-function! Input_Monitor(key, tp)
-    py IM(vim.eval("a:key"), vim.eval("a:tp"))
-    return ''
-endfunction
-
-auto CursorHold  *  py IM("CursorHold", 'event')
-auto CursorHoldI *  py IM("CursorHoldI", 'event')
+"function! Input_Monitor(key, tp)
+"    py IM(vim.eval("a:key"), vim.eval("a:tp"))
+"    return ''
+"endfunction
+"
+"auto CursorHold  *  py IM("CursorHold", 'event')
+"auto CursorHoldI *  py IM("CursorHoldI", 'event')
 
 map  <F2>          :update<cr>
 imap <F2>          <esc>:update<cr>
